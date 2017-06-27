@@ -116,7 +116,6 @@ end
 %Find the end of the last laugh
 lastsample = himymend(length(himymend))*48000;
 yeptemp =  audioread('himyms4e2.wav',[ender,ceil(lastsample)]);
-<<<<<<< HEAD
 yhimym = [yhimym; sum(yeptemp,2)];
 
 
@@ -159,6 +158,3 @@ end
 lastsample = himym9end(length(himym9end))*48000;
 yeptemp =  audioread('9_01.wav',[ender,ceil(lastsample)]);
 yhimym09 = [yhimym09; sum(yeptemp,2)];
-=======
-yhimym = [yhimym; sum(yeptemp,2)];
->>>>>>> cbc56e511db99ff6cab88a6ee07c6c705f12e50d
