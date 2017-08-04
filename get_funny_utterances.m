@@ -29,8 +29,12 @@ LaughterEp9 = find_laugh_start(Ysmooth9,2);
 NAN_zeros9 = find(NANs9 == 0); 
 
 %THERES NOTHING WRONG WITH THESE THREE CALLS
+%This finds the indices of the numbers where laughter is starting
+%Then, it is finding the start time in ms by dividing by 10
 laugh_start_times9 = NAN_zeros9(find(LaughterEp9 == 1))/10;
 
+%Look for the part of the script that has a starting time right before the laughter.
+%Take this to be the utterance that is funny.
 utpred9 = cell(length(laugh_start_times9),1);
 for i = 1:length(laugh_start_times9)
     for j = 1:length(ep9utstart)
@@ -43,9 +47,13 @@ for i = 1:length(laugh_start_times9)
     end
 end
 
+%This has the truth data of the laughter for comparison
 laugh_start_times_truth9 = round(ep9start,1);
-%smooth the ep1start to account for l --> ls and vv
 
+%smooth the ep1start to account for l --> ls and vv
+%This ensures that we will not get utterances that are
+%'between' the laughter. All contiguous laughter should be
+%treated as such.
 laugh_end_times_truth9 = round(ep9end,1);
 ep9real_start = ep9start(1);
 for i = 2:length(laugh_end_times_truth9)
@@ -69,6 +77,7 @@ end
 % 
 % ep9real_end = flip(ep9real_end);
 
+%This will remove the utterances that say, 'Oh' and 'Okay' and 'Ah'
 utact9 = cell(length(ep9real_start),1);
 for i = 1:length(ep9real_start)
     for j = 1:length(ep9utstart)
@@ -87,6 +96,9 @@ for i = 1:length(ep9real_start)
         end
     end
 end
+
+%Compare predicted with actual
+%ALEX, PLEASE FILL IN
 countpred = 0;
 countact = 0;
 for i = 1:length(utpred9)
