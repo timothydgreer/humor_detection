@@ -9,3 +9,7 @@ Then, when you have your data matrix, you can run classify_humor.py to train and
 # Sitcoms
 Using get_data_all_episodes, create your data matrices for HIMYM and Friends (you have to have the signal data to do this)
 Then, use find_laugh_starts.m with this data to find the start of the laughter. From there, you can use subtitle data to find the start of the laughter.
+make_ROC and find_EER will find the roc curve and equal error rate of this data, respectively
+get_funny_utterances will give the humorous utterances that occur before the laugh track happens
+
+
