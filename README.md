@@ -1,5 +1,5 @@
 # Humor Detection
-This repo has code to analyze text from Twitter and audio from situational comedy TV Shows. You must have data from Twitter or the signal from the sitcoms to be able to use this code. It is not supplied in the repository.
+This repo has code to analyze text from Twitter and audio from situational comedy TV Shows. You must have data from Twitter or the signal from the sitcoms to be able to use this code. It is not supplied in the repository. For updated code, check USC SAIL's repo on humor detection.
 
 # Text
 Using 30_minutes_or_less.txt, you can experiment with Get_Features.py. This creates features for the text data for the script of "30 Minutes or Less"
